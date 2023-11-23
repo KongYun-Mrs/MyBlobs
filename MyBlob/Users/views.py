@@ -25,7 +25,7 @@ class LogIn(generics.ListAPIView):
             password = serializer.validated_data.get('password')
 
             auth_user = AuthUsersBackends()
-            user = auth_user.authenticate(username=username, password=password)
+            user, token = auth_user.authenticate(username=username, password=password)
 
             if user is not None:
                 # 认证成功，执行登录操作

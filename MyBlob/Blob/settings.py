@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Blob',
     'Users',
+    'Articls',
     'rest_framework',
     "rest_framework.authtoken"
 ]
@@ -46,6 +47,8 @@ REST_FRAMEWORK = {
         'Users.auth_user.AuthUsersBackends',
         'django.contrib.auth.backends.ModelBackend',
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication'
     ]
 }
 
@@ -127,3 +130,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+ArticlsTypeDict = {
+    "后端": 0,
+    "前端": 1,
+    "MySQL": 2,
+    "运维": 3,
+    "测试": 4,
+    "安卓": 5,
+    "IOS": 6,
+    "代码人生": 7,
+    "阅读": 8,
+    "综合": 9,
+    "排行榜": 10
+}
